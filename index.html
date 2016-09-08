@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>React-native-credit-card-input by YOTOV-LIMITED</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">React-native-credit-card-input</h1>
+      <h2 class="project-tagline">Easy, cross-platform credit-card input for your React Native Project! Start accepting payment 💰 in your app today!</h2>
+      <a href="https://github.com/YOTOV-LIMITED/react-native-credit-card-input" class="btn">View on GitHub</a>
+      <a href="https://github.com/YOTOV-LIMITED/react-native-credit-card-input/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/YOTOV-LIMITED/react-native-credit-card-input/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="react-native-credit-card-input" class="anchor" href="#react-native-credit-card-input" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>React Native Credit Card Input</h1>
+
+<p>Easy (and good looking) credit-card input for your React Native Project <g-emoji alias="credit_card" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4b3.png">💳</g-emoji> <g-emoji alias="credit_card" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4b3.png">💳</g-emoji></p>
+
+<p align="center">
+<img src="https://github.com/sbycrosz/react-native-credit-card-input/blob/master/preview-ios.gif?raw=true" width="200/">
+<img src="https://github.com/sbycrosz/react-native-credit-card-input/blob/master/preview-ios-lite.gif?raw=true" width="200/">
+<img src="https://github.com/sbycrosz/react-native-credit-card-input/blob/master/preview-android.gif?raw=true" width="200/">
+<img src="https://github.com/sbycrosz/react-native-credit-card-input/blob/master/preview-android-lite.gif?raw=true" width="200/">
+</p>
+
+<p>Code:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">&lt;</span>CreditCardInput onChange<span class="pl-k">=</span>{<span class="pl-v">this</span>.<span class="pl-smi">_onChange</span>} <span class="pl-k">/</span><span class="pl-k">&gt;</span>
+<span class="pl-c">// or</span>
+<span class="pl-k">&lt;</span>LiteCreditCardInput onChange<span class="pl-k">=</span>{<span class="pl-v">this</span>.<span class="pl-smi">_onChange</span>} <span class="pl-k">/</span><span class="pl-k">&gt;</span></pre></div>
+
+<h1>
+<a id="features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h1>
+
+<ul>
+<li>Skeuomorphic credit-card <g-emoji alias="credit_card" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4b3.png">💳</g-emoji> (credits to: <a href="https://github.com/sonnylazuardi/react-native-credit-card">react-native-credit-card</a>)</li>
+<li>Lite version for smaller screens (or if skeuomorphic is not really your thing)</li>
+<li>Credit-card input validations &amp; formatting while you're typing</li>
+<li>Form is fully navigatable using keypad</li>
+<li>Works on both Android and iOS</li>
+</ul>
+
+<h1>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h1>
+
+<div class="highlight highlight-source-shell"><pre>npm i --save react-native-credit-card-input</pre></div>
+
+<p>then add these lines in your react-native codebase</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">import</span> { <span class="pl-smi">CreditCardInput</span>, <span class="pl-smi">LiteCreditCardInput</span> } <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">"</span>react-native-credit-card-input<span class="pl-pds">"</span></span>;
+
+<span class="pl-k">&lt;</span>CreditCardInput onChange<span class="pl-k">=</span>{<span class="pl-v">this</span>.<span class="pl-smi">_onChange</span>} <span class="pl-k">/</span><span class="pl-k">&gt;</span>
+<span class="pl-c">// or</span>
+<span class="pl-k">&lt;</span>LiteCreditCardInput onChange<span class="pl-k">=</span>{<span class="pl-v">this</span>.<span class="pl-smi">_onChange</span>} <span class="pl-k">/</span><span class="pl-k">&gt;</span>
+
+<span class="pl-c">// Note: You'll need to enable LayoutAnimation on android to see LiteCreditCardInput's animations</span>
+<span class="pl-c">// UIManager.setLayoutAnimationEnabledExperimental(true);</span>
+</pre></div>
+
+<p>And then on your onChange handler:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">_onChange</span> <span class="pl-k">=&gt;</span> <span class="pl-smi">form</span> <span class="pl-k">=&gt;</span> <span class="pl-en">console</span>.<span class="pl-c1">log</span>(form);
+
+<span class="pl-c">// will print:</span>
+{
+  valid<span class="pl-k">:</span> <span class="pl-c1">true</span>, <span class="pl-c">// will be true once all fields are "valid" (time to enable the submit button)</span>
+  focused<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>number<span class="pl-pds">"</span></span>, <span class="pl-c">// will be one of [null, "number", "expiry", and "cvc"]</span>
+  values<span class="pl-k">:</span> { <span class="pl-c">// will be in the sanitized and formatted form</span>
+    number<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>4242 4242<span class="pl-pds">"</span></span>,
+    expiry<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>06/19<span class="pl-pds">"</span></span>,
+    cvc<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>300<span class="pl-pds">"</span></span>,
+    type<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>visa<span class="pl-pds">"</span></span>, <span class="pl-c">// will be one of [null, "visa", "master-card", "american-express", "diners-club", "discover", "jcb", "unionpay", "maestro"]</span>
+  },
+  status<span class="pl-k">:</span> {  <span class="pl-c">// will be one of ["incomplete", "invalid", and "valid"]</span>
+    number<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>incomplete<span class="pl-pds">"</span></span>,
+    expiry<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>incomplete<span class="pl-pds">"</span></span>
+    cvc<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>incomplete<span class="pl-pds">"</span></span>
+  },
+};</pre></div>
+
+<h1>
+<a id="props" class="anchor" href="#props" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Props</h1>
+
+<h2>
+<a id="litecreditcardinput" class="anchor" href="#litecreditcardinput" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>LiteCreditCardInput</h2>
+
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>autoFocus</td>
+<td>PropTypes.bool</td>
+<td>Automatically focus Card Number field on render</td>
+</tr>
+<tr>
+<td>onChange</td>
+<td>PropTypes.func</td>
+<td>Receives a <code>formData</code> object every time the form changes</td>
+</tr>
+<tr>
+<td>placeholders</td>
+<td>PropTypes.object</td>
+<td>Defaults to <br><code>{ number: "1234 5678 1234 5678", expiry: "MM/YY", cvc: "CVC" }</code>
+</td>
+</tr>
+<tr>
+<td>inputStyle</td>
+<td>Text.propTypes.style</td>
+<td>Style for credit-card form's textInput</td>
+</tr>
+<tr>
+<td>validColor</td>
+<td>PropTypes.string</td>
+<td>Color that will be applied for valid text input. Defaults to: "{inputStyle.color}"</td>
+</tr>
+<tr>
+<td>invalidColor</td>
+<td>PropTypes.string</td>
+<td>Color that will be applied for invalid text input. Defaults to: "red"</td>
+</tr>
+<tr>
+<td>placeholderColor</td>
+<td>PropTypes.string</td>
+<td>Color that will be applied for text input placeholder. Defaults to: "gray"</td>
+</tr>
+</tbody>
+</table>
+
+<h2>
+<a id="creditcardinput" class="anchor" href="#creditcardinput" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>CreditCardInput</h2>
+
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>autoFocus</td>
+<td>PropTypes.bool</td>
+<td>Automatically focus Card Number field on render</td>
+</tr>
+<tr>
+<td>onChange</td>
+<td>PropTypes.func</td>
+<td>Receives a <code>formData</code> object every time the form changes</td>
+</tr>
+<tr>
+<td>labels</td>
+<td>PropTypes.object</td>
+<td>Defaults to <br><code>{ number: "CARD NUMBER", expiry: "EXPIRY", cvc: "CVC/CCV" }</code>
+</td>
+</tr>
+<tr>
+<td>placeholders</td>
+<td>PropTypes.object</td>
+<td>Defaults to <br><code>{ number: "1234 5678 1234 5678", expiry: "MM/YY", cvc: "CVC" }</code>
+</td>
+</tr>
+<tr>
+<td>cardViewSize</td>
+<td>PropTypes.object</td>
+<td>Size of the credit-card view.<br>Defaults to <code>{ width: 300, height: 180 }</code> (managed by <a href="https://github.com/sonnylazuardi/react-native-credit-card">react-native-credit-card</a>)</td>
+</tr>
+<tr>
+<td>imageFront</td>
+<td>PropTypes.number</td>
+<td>Image for the credit-card view <code>e.g. require("./card.png")</code>
+</td>
+</tr>
+<tr>
+<td>imageBack</td>
+<td>PropTypes.number</td>
+<td>Image for the credit-card view <code>e.g. require("./card.png")</code>
+</td>
+</tr>
+<tr>
+<td>labelStyle</td>
+<td>Text.propTypes.style</td>
+<td>Style for credit-card form's labels</td>
+</tr>
+<tr>
+<td>inputStyle</td>
+<td>Text.propTypes.style</td>
+<td>Style for credit-card form's textInput</td>
+</tr>
+<tr>
+<td>inputContainerStyle</td>
+<td>View.propTypes.style</td>
+<td>Style for textInput's container<br> Defaults to: <code>{ borderBottomWidth: 1, borderBottomColor: "black" }</code>
+</td>
+</tr>
+<tr>
+<td>validColor</td>
+<td>PropTypes.string</td>
+<td>Color that will be applied for valid text input. Defaults to: "{inputStyle.color}"</td>
+</tr>
+<tr>
+<td>invalidColor</td>
+<td>PropTypes.string</td>
+<td>Color that will be applied for invalid text input. Defaults to: "red"</td>
+</tr>
+<tr>
+<td>placeholderColor</td>
+<td>PropTypes.string</td>
+<td>Color that will be applied for text input placeholder. Defaults to: "gray"</td>
+</tr>
+</tbody>
+</table>
+
+<h1>
+<a id="example" class="anchor" href="#example" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example</h1>
+
+<p>In the <code>example</code> directory, run:</p>
+
+<div class="highlight highlight-source-shell"><pre>npm install
+
+react-native run-ios
+<span class="pl-c"># or</span>
+react-native run-android</pre></div>
+
+<h1>
+<a id="missing-something-something-is-not-working" class="anchor" href="#missing-something-something-is-not-working" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Missing Something? Something is not working?</h1>
+
+<ul>
+<li>Open a GitHub issue, or</li>
+<li>Send a pull request :D</li>
+</ul>
+
+<h1>
+<a id="future-improvement" class="anchor" href="#future-improvement" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Future Improvement</h1>
+
+<ul>
+<li>Add eslint</li>
+<li>Add unit tests</li>
+<li>Accept initialValues</li>
+<li>Accept name / postalCode fields</li>
+</ul>
+
+<h1>
+<a id="production-app-using-react-native-credit-card-input" class="anchor" href="#production-app-using-react-native-credit-card-input" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Production App using react-native-credit-card-input</h1>
+
+<ul>
+<li>Grain.com.sg (<a href="https://itunes.apple.com/us/app/grain-never-worry-about-food/id1088932420">iOS</a>) – Gourmet food delivery in Singapore</li>
+</ul>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/YOTOV-LIMITED/react-native-credit-card-input">React-native-credit-card-input</a> is maintained by <a href="https://github.com/YOTOV-LIMITED">YOTOV-LIMITED</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
